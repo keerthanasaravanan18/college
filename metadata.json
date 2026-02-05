@@ -1,0 +1,7 @@
+{
+  "name": "Vivasaya Udhaviyalar",
+  "description": "An offline-capable agricultural advisory system providing personalized Indian crop recommendations and Sandhai price analysis.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

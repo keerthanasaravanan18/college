@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgroSmart AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              agro: {
+                light: '#E6F4F1',
+                muted: '#249E94',
+                primary: '#0C7779',
+                secondary: '#3BC1A8',
+                dark: '#005461',
+                accent: '#FACC15',
+              }
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(12, 119, 121, 0.15)',
+              'soft': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
+              'emerald-glow': '0 0 20px rgba(16, 185, 129, 0.3)',
+              'premium-hover': '0 25px 50px -12px rgba(12, 119, 121, 0.25)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'scan-loop': 'scan-line 2.5s ease-in-out infinite',
+              'radar-ping': 'radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+              'progress-load': 'progress-load 3s ease-in-out forwards',
+              'fade-out': 'fade-out 0.5s ease-in-out forwards',
+              'shimmer-fast': 'shimmer 1.5s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'scan-line': {
+                '0%': { top: '0%' },
+                '50%': { top: '100%' },
+                '100%': { top: '0%' }
+              },
+              'radar-ping': {
+                '75%, 100%': { transform: 'scale(2)', opacity: '0' }
+              },
+              'progress-load': {
+                '0%': { width: '0%', opacity: '1' },
+                '100%': { width: '100%', opacity: '1' }
+              },
+              'fade-out': {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0', visibility: 'hidden' }
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-font-smoothing: antialiased;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .dark .glass-card {
+        background: rgba(15, 23, 42, 0.7);
+      }
+      .hover-lift {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      }
+      .hover-lift:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+      .spring-active:active {
+        transform: scale(0.95);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-agro-light dark:bg-slate-950 text-agro-dark dark:text-slate-100 selection:bg-agro-primary selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
